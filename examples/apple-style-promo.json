@@ -1,0 +1,75 @@
+{
+  "canvasState": {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "#000000",
+    "maxTime": 15000,
+    "elements": [
+      {
+        "id": "el_brand",
+        "type": "text",
+        "name": "Brand",
+        "timeFrame": { "start": 500, "end": 5000 },
+        "placement": { "x": 210, "y": 420, "width": 1500, "height": 160, "rotation": 0, "scaleX": 1, "scaleY": 1 },
+        "properties": { "text": "Your Brand", "fontFamily": "Arial", "fontSize": 144, "fontWeight": 700, "fontColor": "#ffffff", "textAlign": "center" }
+      },
+      {
+        "id": "el_tagline1",
+        "type": "text",
+        "name": "Tagline Bold",
+        "timeFrame": { "start": 5000, "end": 10000 },
+        "placement": { "x": 260, "y": 420, "width": 1400, "height": 80, "rotation": 0, "scaleX": 1, "scaleY": 1 },
+        "properties": { "text": "Think different.", "fontFamily": "Arial", "fontSize": 72, "fontWeight": 600, "fontColor": "#ffffff", "textAlign": "center" }
+      },
+      {
+        "id": "el_tagline2",
+        "type": "text",
+        "name": "Tagline Light",
+        "timeFrame": { "start": 6000, "end": 10000 },
+        "placement": { "x": 260, "y": 520, "width": 1400, "height": 80, "rotation": 0, "scaleX": 1, "scaleY": 1 },
+        "properties": { "text": "Create beautifully.", "fontFamily": "Arial", "fontSize": 72, "fontWeight": 300, "fontColor": "#86868b", "textAlign": "center" }
+      },
+      {
+        "id": "el_cta",
+        "type": "text",
+        "name": "CTA",
+        "timeFrame": { "start": 10000, "end": 15000 },
+        "placement": { "x": 460, "y": 460, "width": 1000, "height": 80, "rotation": 0, "scaleX": 1, "scaleY": 1 },
+        "properties": { "text": "Learn more", "fontFamily": "Arial", "fontSize": 48, "fontWeight": 400, "fontColor": "#2997ff", "textAlign": "center" }
+      },
+      {
+        "id": "el_url",
+        "type": "text",
+        "name": "URL",
+        "timeFrame": { "start": 11000, "end": 15000 },
+        "opacity": 0.5,
+        "placement": { "x": 560, "y": 560, "width": 800, "height": 40, "rotation": 0, "scaleX": 1, "scaleY": 1 },
+        "properties": { "text": "yourbrand.com", "fontFamily": "Arial", "fontSize": 28, "fontWeight": 400, "fontColor": "#86868b", "textAlign": "center" }
+      }
+    ],
+    "tracks": [
+      { "id": "t_1", "name": "Text", "type": "text", "elementIds": ["el_brand", "el_tagline1", "el_tagline2", "el_cta", "el_url"], "isVisible": true }
+    ],
+    "animations": [
+      { "id": "a_1", "targetId": "el_brand", "type": "fadeIn", "duration": 1500, "group": "in", "easing": "easeOut", "properties": {} },
+      { "id": "a_2", "targetId": "el_brand", "type": "fadeOut", "duration": 800, "group": "out", "easing": "easeIn", "properties": {} },
+      { "id": "a_3", "targetId": "el_tagline1", "type": "fadeIn", "duration": 1200, "group": "in", "easing": "easeOut", "properties": {} },
+      { "id": "a_4", "targetId": "el_tagline1", "type": "fadeOut", "duration": 800, "group": "out", "easing": "easeIn", "properties": {} },
+      { "id": "a_5", "targetId": "el_tagline2", "type": "fadeIn", "duration": 1200, "group": "in", "easing": "easeOut", "properties": {} },
+      { "id": "a_6", "targetId": "el_tagline2", "type": "fadeOut", "duration": 800, "group": "out", "easing": "easeIn", "properties": {} },
+      { "id": "a_7", "targetId": "el_cta", "type": "fadeIn", "duration": 1000, "group": "in", "easing": "easeOut", "properties": {} },
+      { "id": "a_8", "targetId": "el_url", "type": "fadeIn", "duration": 1000, "group": "in", "easing": "easeOut", "properties": {} }
+    ],
+    "captions": [],
+    "globalCaptionStyle": {
+      "fontSize": 36, "fontFamily": "Arial", "fontColor": "#ffffff", "fontWeight": 700,
+      "textAlign": "center", "lineHeight": 1.2, "charSpacing": 0, "styles": [],
+      "strokeWidth": 0, "strokeColor": "#000000",
+      "shadowColor": "", "shadowBlur": 0, "shadowOffsetX": 0, "shadowOffsetY": 0,
+      "backgroundColor": ""
+    },
+    "keyframeTracks": [],
+    "transitions": []
+  },
+  "outputFormat": { "fps": 30, "quality": "high", "format": "mp4" }
+}

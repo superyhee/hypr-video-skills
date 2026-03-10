@@ -1,0 +1,26 @@
+{
+  "name": "hypr-video-cli",
+  "version": "0.1.0",
+  "description": "CLI tool to render videos from canvasState JSON — powered by Fabric Video Editor's server-side rendering engine",
+  "license": "MIT",
+  "bin": {
+    "render-video": "./bin/render-video"
+  },
+  "files": [
+    "bin/",
+    "dist/",
+    "scripts/",
+    "skill/"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "render": "node dist/render-video.mjs",
+    "validate": "npx tsx scripts/validate-canvas-state.ts"
+  },
+  "dependencies": {
+    "skia-canvas": "^3.0.8",
+    "sharp": "^0.34.5"
+  }
+}

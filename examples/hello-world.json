@@ -1,0 +1,45 @@
+{
+  "canvasState": {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "#000000",
+    "maxTime": 5000,
+    "elements": [
+      {
+        "id": "el_title",
+        "type": "text",
+        "name": "Title",
+        "timeFrame": { "start": 0, "end": 5000 },
+        "placement": { "x": 260, "y": 400, "width": 1400, "height": 200, "rotation": 0, "scaleX": 1, "scaleY": 1 },
+        "properties": { "text": "Hello World", "fontFamily": "Arial", "fontSize": 120, "fontWeight": 700, "fontColor": "#ffffff", "textAlign": "center" }
+      },
+      {
+        "id": "el_sub",
+        "type": "text",
+        "name": "Subtitle",
+        "timeFrame": { "start": 1000, "end": 5000 },
+        "opacity": 0.6,
+        "placement": { "x": 460, "y": 600, "width": 1000, "height": 60, "rotation": 0, "scaleX": 1, "scaleY": 1 },
+        "properties": { "text": "Rendered with hypr-video-cli", "fontFamily": "Arial", "fontSize": 32, "fontWeight": 400, "fontColor": "#888888", "textAlign": "center" }
+      }
+    ],
+    "tracks": [
+      { "id": "t_1", "name": "Text", "type": "text", "elementIds": ["el_title", "el_sub"], "isVisible": true }
+    ],
+    "animations": [
+      { "id": "a_1", "targetId": "el_title", "type": "fadeIn", "duration": 1000, "group": "in", "easing": "easeOut", "properties": {} },
+      { "id": "a_2", "targetId": "el_sub", "type": "fadeIn", "duration": 800, "group": "in", "easing": "easeOut", "properties": {} }
+    ],
+    "captions": [],
+    "globalCaptionStyle": {
+      "fontSize": 36, "fontFamily": "Arial", "fontColor": "#ffffff", "fontWeight": 700,
+      "textAlign": "center", "lineHeight": 1.2, "charSpacing": 0, "styles": [],
+      "strokeWidth": 0, "strokeColor": "#000000",
+      "shadowColor": "", "shadowBlur": 0, "shadowOffsetX": 0, "shadowOffsetY": 0,
+      "backgroundColor": ""
+    },
+    "keyframeTracks": [],
+    "transitions": []
+  },
+  "outputFormat": { "fps": 30, "quality": "medium", "format": "mp4" }
+}
