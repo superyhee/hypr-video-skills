@@ -1,0 +1,635 @@
+{
+  "canvasState": {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "#000000",
+    "maxTime": 30000,
+    "elements": [
+      {
+        "id": "el_intro",
+        "type": "text",
+        "name": "Introducing",
+        "opacity": 1,
+        "timeFrame": { "start": 0, "end": 1500 },
+        "placement": {
+          "x": 660,
+          "y": 440,
+          "width": 600,
+          "height": 60,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "text": "Introducing",
+          "fontFamily": "Arial",
+          "fontSize": 36,
+          "fontWeight": 300,
+          "fontColor": "#999999",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "el_product",
+        "type": "text",
+        "name": "Product Name",
+        "opacity": 1,
+        "timeFrame": { "start": 1500, "end": 8000 },
+        "placement": {
+          "x": 260,
+          "y": 420,
+          "width": 1400,
+          "height": 200,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "text": "iPhone Ultra",
+          "fontFamily": "Arial",
+          "fontSize": 120,
+          "fontWeight": 700,
+          "fontColor": "#ffffff",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "el_tagline",
+        "type": "text",
+        "name": "Tagline",
+        "opacity": 1,
+        "timeFrame": { "start": 3000, "end": 8000 },
+        "placement": {
+          "x": 560,
+          "y": 650,
+          "width": 800,
+          "height": 60,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "text": "The Future is Here",
+          "fontFamily": "Arial",
+          "fontSize": 32,
+          "fontWeight": 300,
+          "fontColor": "#0071E3",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "el_line1",
+        "type": "shape",
+        "name": "Accent Line 1",
+        "opacity": 1,
+        "timeFrame": { "start": 8500, "end": 14500 },
+        "placement": {
+          "x": 860,
+          "y": 395,
+          "width": 200,
+          "height": 2,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "shapeType": "rect",
+          "fill": "#0071E3"
+        }
+      },
+      {
+        "id": "el_feat1_title",
+        "type": "text",
+        "name": "Feature 1 Title",
+        "opacity": 1,
+        "timeFrame": { "start": 8500, "end": 14500 },
+        "placement": {
+          "x": 360,
+          "y": 420,
+          "width": 1200,
+          "height": 120,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "text": "Pro Camera System",
+          "fontFamily": "Arial",
+          "fontSize": 72,
+          "fontWeight": 700,
+          "fontColor": "#ffffff",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "el_feat1_sub",
+        "type": "text",
+        "name": "Feature 1 Subtitle",
+        "opacity": 1,
+        "timeFrame": { "start": 9500, "end": 14500 },
+        "placement": {
+          "x": 360,
+          "y": 560,
+          "width": 1200,
+          "height": 60,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "text": "48MP Main  |  5x Optical Zoom  |  Night Mode",
+          "fontFamily": "Arial",
+          "fontSize": 28,
+          "fontWeight": 300,
+          "fontColor": "#999999",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "el_line2",
+        "type": "shape",
+        "name": "Accent Line 2",
+        "opacity": 1,
+        "timeFrame": { "start": 15000, "end": 21000 },
+        "placement": {
+          "x": 860,
+          "y": 395,
+          "width": 200,
+          "height": 2,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "shapeType": "rect",
+          "fill": "#0071E3"
+        }
+      },
+      {
+        "id": "el_feat2_title",
+        "type": "text",
+        "name": "Feature 2 Title",
+        "opacity": 1,
+        "timeFrame": { "start": 15000, "end": 21000 },
+        "placement": {
+          "x": 360,
+          "y": 420,
+          "width": 1200,
+          "height": 120,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "text": "A18 Pro Chip",
+          "fontFamily": "Arial",
+          "fontSize": 72,
+          "fontWeight": 700,
+          "fontColor": "#ffffff",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "el_feat2_sub",
+        "type": "text",
+        "name": "Feature 2 Subtitle",
+        "opacity": 1,
+        "timeFrame": { "start": 16000, "end": 21000 },
+        "placement": {
+          "x": 360,
+          "y": 560,
+          "width": 1200,
+          "height": 60,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "text": "The fastest chip ever in a smartphone",
+          "fontFamily": "Arial",
+          "fontSize": 28,
+          "fontWeight": 300,
+          "fontColor": "#999999",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "el_line3",
+        "type": "shape",
+        "name": "Accent Line 3",
+        "opacity": 1,
+        "timeFrame": { "start": 21500, "end": 27000 },
+        "placement": {
+          "x": 860,
+          "y": 395,
+          "width": 200,
+          "height": 2,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "shapeType": "rect",
+          "fill": "#0071E3"
+        }
+      },
+      {
+        "id": "el_feat3_title",
+        "type": "text",
+        "name": "Feature 3 Title",
+        "opacity": 1,
+        "timeFrame": { "start": 21500, "end": 27000 },
+        "placement": {
+          "x": 360,
+          "y": 420,
+          "width": 1200,
+          "height": 120,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "text": "All-Day Battery",
+          "fontFamily": "Arial",
+          "fontSize": 72,
+          "fontWeight": 700,
+          "fontColor": "#ffffff",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "el_feat3_sub",
+        "type": "text",
+        "name": "Feature 3 Subtitle",
+        "opacity": 1,
+        "timeFrame": { "start": 22500, "end": 27000 },
+        "placement": {
+          "x": 360,
+          "y": 560,
+          "width": 1200,
+          "height": 60,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "text": "Up to 29 hours of video playback",
+          "fontFamily": "Arial",
+          "fontSize": 28,
+          "fontWeight": 300,
+          "fontColor": "#999999",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "el_final_name",
+        "type": "text",
+        "name": "Final Product Name",
+        "opacity": 1,
+        "timeFrame": { "start": 27500, "end": 30000 },
+        "placement": {
+          "x": 360,
+          "y": 420,
+          "width": 1200,
+          "height": 160,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "text": "iPhone Ultra",
+          "fontFamily": "Arial",
+          "fontSize": 96,
+          "fontWeight": 700,
+          "fontColor": "#ffffff",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "el_final_cta",
+        "type": "text",
+        "name": "CTA",
+        "opacity": 1,
+        "timeFrame": { "start": 28000, "end": 30000 },
+        "placement": {
+          "x": 660,
+          "y": 600,
+          "width": 600,
+          "height": 50,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "text": "Available Now",
+          "fontFamily": "Arial",
+          "fontSize": 28,
+          "fontWeight": 400,
+          "fontColor": "#0071E3",
+          "textAlign": "center"
+        }
+      }
+    ],
+    "tracks": [
+      {
+        "id": "track_shapes",
+        "name": "Accent Lines",
+        "type": "shape",
+        "elementIds": ["el_line1", "el_line2", "el_line3"],
+        "isVisible": true
+      },
+      {
+        "id": "track_intro",
+        "name": "Intro Text",
+        "type": "text",
+        "elementIds": ["el_intro"],
+        "isVisible": true
+      },
+      {
+        "id": "track_tagline",
+        "name": "Tagline",
+        "type": "text",
+        "elementIds": ["el_tagline", "el_final_cta"],
+        "isVisible": true
+      },
+      {
+        "id": "track_product",
+        "name": "Product Name",
+        "type": "text",
+        "elementIds": ["el_product", "el_final_name"],
+        "isVisible": true
+      },
+      {
+        "id": "track_features",
+        "name": "Feature Titles",
+        "type": "text",
+        "elementIds": ["el_feat1_title", "el_feat2_title", "el_feat3_title"],
+        "isVisible": true
+      },
+      {
+        "id": "track_subtitles",
+        "name": "Feature Subtitles",
+        "type": "text",
+        "elementIds": ["el_feat1_sub", "el_feat2_sub", "el_feat3_sub"],
+        "isVisible": true
+      }
+    ],
+    "animations": [
+      {
+        "id": "anim_intro_in",
+        "targetId": "el_intro",
+        "type": "fadeIn",
+        "duration": 1000,
+        "group": "in",
+        "easing": "easeOut",
+        "properties": {}
+      },
+      {
+        "id": "anim_intro_out",
+        "targetId": "el_intro",
+        "type": "fadeOut",
+        "duration": 800,
+        "group": "out",
+        "easing": "easeIn",
+        "properties": {}
+      },
+      {
+        "id": "anim_product_in",
+        "targetId": "el_product",
+        "type": "zoomIn",
+        "duration": 1200,
+        "group": "in",
+        "easing": "easeOut",
+        "properties": {}
+      },
+      {
+        "id": "anim_product_out",
+        "targetId": "el_product",
+        "type": "fadeOut",
+        "duration": 800,
+        "group": "out",
+        "easing": "easeIn",
+        "properties": {}
+      },
+      {
+        "id": "anim_tagline_in",
+        "targetId": "el_tagline",
+        "type": "fadeIn",
+        "duration": 800,
+        "group": "in",
+        "easing": "easeOut",
+        "properties": {}
+      },
+      {
+        "id": "anim_tagline_out",
+        "targetId": "el_tagline",
+        "type": "fadeOut",
+        "duration": 800,
+        "group": "out",
+        "easing": "easeIn",
+        "properties": {}
+      },
+      {
+        "id": "anim_line1_in",
+        "targetId": "el_line1",
+        "type": "fadeIn",
+        "duration": 500,
+        "group": "in",
+        "easing": "easeOut",
+        "properties": {}
+      },
+      {
+        "id": "anim_line1_out",
+        "targetId": "el_line1",
+        "type": "fadeOut",
+        "duration": 500,
+        "group": "out",
+        "easing": "easeIn",
+        "properties": {}
+      },
+      {
+        "id": "anim_f1t_in",
+        "targetId": "el_feat1_title",
+        "type": "slideIn",
+        "duration": 800,
+        "group": "in",
+        "easing": "easeOut",
+        "properties": {}
+      },
+      {
+        "id": "anim_f1t_out",
+        "targetId": "el_feat1_title",
+        "type": "fadeOut",
+        "duration": 600,
+        "group": "out",
+        "easing": "easeIn",
+        "properties": {}
+      },
+      {
+        "id": "anim_f1s_in",
+        "targetId": "el_feat1_sub",
+        "type": "fadeIn",
+        "duration": 800,
+        "group": "in",
+        "easing": "easeOut",
+        "properties": {}
+      },
+      {
+        "id": "anim_f1s_out",
+        "targetId": "el_feat1_sub",
+        "type": "fadeOut",
+        "duration": 600,
+        "group": "out",
+        "easing": "easeIn",
+        "properties": {}
+      },
+      {
+        "id": "anim_line2_in",
+        "targetId": "el_line2",
+        "type": "fadeIn",
+        "duration": 500,
+        "group": "in",
+        "easing": "easeOut",
+        "properties": {}
+      },
+      {
+        "id": "anim_line2_out",
+        "targetId": "el_line2",
+        "type": "fadeOut",
+        "duration": 500,
+        "group": "out",
+        "easing": "easeIn",
+        "properties": {}
+      },
+      {
+        "id": "anim_f2t_in",
+        "targetId": "el_feat2_title",
+        "type": "slideIn",
+        "duration": 800,
+        "group": "in",
+        "easing": "easeOut",
+        "properties": {}
+      },
+      {
+        "id": "anim_f2t_out",
+        "targetId": "el_feat2_title",
+        "type": "fadeOut",
+        "duration": 600,
+        "group": "out",
+        "easing": "easeIn",
+        "properties": {}
+      },
+      {
+        "id": "anim_f2s_in",
+        "targetId": "el_feat2_sub",
+        "type": "fadeIn",
+        "duration": 800,
+        "group": "in",
+        "easing": "easeOut",
+        "properties": {}
+      },
+      {
+        "id": "anim_f2s_out",
+        "targetId": "el_feat2_sub",
+        "type": "fadeOut",
+        "duration": 600,
+        "group": "out",
+        "easing": "easeIn",
+        "properties": {}
+      },
+      {
+        "id": "anim_line3_in",
+        "targetId": "el_line3",
+        "type": "fadeIn",
+        "duration": 500,
+        "group": "in",
+        "easing": "easeOut",
+        "properties": {}
+      },
+      {
+        "id": "anim_line3_out",
+        "targetId": "el_line3",
+        "type": "fadeOut",
+        "duration": 500,
+        "group": "out",
+        "easing": "easeIn",
+        "properties": {}
+      },
+      {
+        "id": "anim_f3t_in",
+        "targetId": "el_feat3_title",
+        "type": "slideIn",
+        "duration": 800,
+        "group": "in",
+        "easing": "easeOut",
+        "properties": {}
+      },
+      {
+        "id": "anim_f3t_out",
+        "targetId": "el_feat3_title",
+        "type": "fadeOut",
+        "duration": 600,
+        "group": "out",
+        "easing": "easeIn",
+        "properties": {}
+      },
+      {
+        "id": "anim_f3s_in",
+        "targetId": "el_feat3_sub",
+        "type": "fadeIn",
+        "duration": 800,
+        "group": "in",
+        "easing": "easeOut",
+        "properties": {}
+      },
+      {
+        "id": "anim_f3s_out",
+        "targetId": "el_feat3_sub",
+        "type": "fadeOut",
+        "duration": 600,
+        "group": "out",
+        "easing": "easeIn",
+        "properties": {}
+      },
+      {
+        "id": "anim_final_in",
+        "targetId": "el_final_name",
+        "type": "fadeIn",
+        "duration": 1000,
+        "group": "in",
+        "easing": "easeOut",
+        "properties": {}
+      },
+      {
+        "id": "anim_cta_in",
+        "targetId": "el_final_cta",
+        "type": "fadeIn",
+        "duration": 800,
+        "group": "in",
+        "easing": "easeOut",
+        "properties": {}
+      }
+    ],
+    "captions": [],
+    "globalCaptionStyle": {
+      "fontSize": 36,
+      "fontFamily": "Arial",
+      "fontColor": "#ffffff",
+      "fontWeight": 700,
+      "textAlign": "center",
+      "lineHeight": 1.2,
+      "charSpacing": 0,
+      "styles": [],
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "shadowColor": "",
+      "shadowBlur": 0,
+      "shadowOffsetX": 0,
+      "shadowOffsetY": 0,
+      "backgroundColor": ""
+    },
+    "keyframeTracks": [],
+    "transitions": []
+  },
+  "outputFormat": { "fps": 30, "quality": "high", "format": "mp4" }
+}

@@ -106,7 +106,7 @@ Each `effectLayer`:
 | `colorGrading` | `brightness`, `contrast`, `saturation`, `hue`, `temperature`, `tint`, `gamma` | Professional color grading |
 | `sharpen`      | `intensity` (0-5), `threshold` (0-1)                                          | Image sharpening           |
 
-### stylize (14 types)
+### stylize (13 types)
 
 | effectType   | Key Params                                               | Description           |
 | ------------ | -------------------------------------------------------- | --------------------- |
@@ -152,6 +152,11 @@ An effect element can have multiple layers that apply sequentially:
   },
   "properties": {
     "effectLayers": [
+      {
+        "effectType": "glow",
+        "effectParams": { "intensity": 0.6, "radius": 12, "threshold": 0.3 },
+        "enabled": true
+      },
       {
         "effectType": "colorGrading",
         "effectParams": {

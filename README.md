@@ -323,36 +323,25 @@ Caption presets: `none`, `fadeWord`, `karaoke`, `typewriter`, `slideUp`, `popIn`
         "effectType": "colorGrading",
         "effectParams": { "contrast": 0.2, "saturation": -0.1 },
         "enabled": true
-      },
-      {
-        "effectType": "vignette",
-        "effectParams": { "intensity": 0.4, "radius": 0.8 },
-        "enabled": true
-      },
-      {
-        "effectType": "filmGrain",
-        "effectParams": { "intensity": 0.3, "size": 1.5 },
-        "enabled": true
       }
     ]
   }
 }
 ```
 
-| Category       | Effect Types                                                                                                                                          |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Blur (7)       | `gaussianBlur`, `radialBlur`, `motionBlur`, `tiltShift`, `bokeh`, `kawaseBlur`, `cameraMotionBlur`                                                    |
-| Distortion (9) | `wave`, `ripple`, `fisheye`, `swirl`, `kaleidoscope`, `spherize`, `mirror`, `split`, `zoomPulse`                                                      |
-| Glitch (3)     | `rgbSplit`, `glitchBlock`, `shake`                                                                                                                    |
-| Light (8)      | `vignette`, `glow`, `lensFlare`, `lightLeak`, `sparkle`, `flash`, `godray`, `spotlight`                                                               |
-| Basic (4)      | `invert`, `duotone`, `colorGrading`, `sharpen`                                                                                                        |
-| Stylize (14)   | `filmGrain`, `vhs`, `pixelate`, `posterize`, `halftone`, `emboss`, `thermal`, `echo`, `rain`, `snow`, `ascii`, `crossHatch`, `neonEdge`, `colorShift` |
-| Other (2)      | `fire`, `fireworks`                                                                                                                                   |
+| Category       | Effect Types                                                                                                                             |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Blur (7)       | `gaussianBlur`, `radialBlur`, `motionBlur`, `tiltShift`, `bokeh`, `kawaseBlur`, `cameraMotionBlur`                                       |
+| Distortion (9) | `wave`, `ripple`, `fisheye`, `swirl`, `kaleidoscope`, `spherize`, `mirror`, `split`, `zoomPulse`                                         |
+| Glitch (3)     | `rgbSplit`, `glitchBlock`, `shake`                                                                                                       |
+| Light (8)      | `vignette`, `glow`, `lensFlare`, `lightLeak`, `sparkle`, `flash`, `godray`, `spotlight`                                                  |
+| Basic (4)      | `invert`, `duotone`, `colorGrading`, `sharpen`                                                                                           |
+| Stylize (14)   | `vhs`, `pixelate`, `posterize`, `halftone`, `emboss`, `thermal`, `echo`, `rain`, `snow`, `ascii`, `crossHatch`, `neonEdge`, `colorShift` |
+| Other (2)      | `fire`, `fireworks`                                                                                                                      |
 
 Common presets:
 
-- Cinematic: `colorGrading` + `vignette` + `filmGrain`
-- Retro/VHS: `vhs` + `filmGrain` + `colorShift`
+- Retro/VHS: `vhs` + + `colorShift`
 - Dream: `gaussianBlur` + `glow` + `lightLeak`
 - Glitch: `rgbSplit` + `glitchBlock` + `shake`
 
