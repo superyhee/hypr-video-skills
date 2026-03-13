@@ -13,10 +13,6 @@ Describe your video in natural language, and Claude builds the structured JSON (
   <img src="assets/demo-preview.gif" alt="hypr-video-cli demo preview" width="640" />
 </p>
 
-<p align="center">
-  <a href="assets/project-intro-demo.mp4">▶ Watch full demo video (MP4)</a>
-</p>
-
 ```
  "Create a product launch video"
             │
