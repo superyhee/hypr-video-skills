@@ -1,6 +1,6 @@
 {
   "name": "hypr-video-cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Claude Code Skill for creating programmatic videos with CLI — render MP4 from JSON with animations, transitions, captions, keyframes, and 50+ visual effects",
   "license": "MIT",
   "type": "module",

@@ -7,6 +7,16 @@ A Claude Code Skill for creating programmatic videos with CLI.
 
 Describe your video in natural language, and Claude builds the structured JSON (text, shapes, animations, transitions, captions, keyframes, 50+ visual effects) and renders it to MP4 — all from your terminal. Powered by skia-canvas + FFmpeg.
 
+## Demo
+
+<p align="center">
+  <img src="assets/demo-preview.gif" alt="hypr-video-cli demo preview" width="640" />
+</p>
+
+<p align="center">
+  <a href="assets/project-intro-demo.mp4">▶ Watch full demo video (MP4)</a>
+</p>
+
 ```
  "Create a product launch video"
             │
@@ -410,9 +420,10 @@ node dist/render-video.mjs examples/hello-world.json -o output.mp4
 
 ```
 hypr-video-cli/
+├── assets/                 # Demo video and preview GIF
 ├── bin/                    # Entry script
 ├── dist/                   # Bundled CLI (render-video.mjs)
-├── examples/               # 8 ready-to-render JSON templates
+├── examples/               # Ready-to-render JSON templates
 ├── scripts/
 │   └── validate-canvas-state.ts   # JSON validator
 ├── skill/

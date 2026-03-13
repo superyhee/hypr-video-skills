@@ -1,8 +1,8 @@
 {
   "canvasState": {
     "width": 1920,
-    "height": 1280,
-    "backgroundColor": "linear-gradient(150deg, #0a0a1a, #0d1b2a, #1a0a2e)",
+    "height": 1080,
+    "backgroundColor": "#0a0a0f",
     "maxTime": 30000,
     "elements": [
       {
@@ -13,7 +13,7 @@
         "timeFrame": { "start": 0, "end": 5000 },
         "placement": {
           "x": 260,
-          "y": 370,
+          "y": 340,
           "width": 1400,
           "height": 200,
           "rotation": 0,
@@ -22,11 +22,18 @@
         },
         "properties": {
           "text": "hypr-video-cli",
-          "fontFamily": "Courier New",
-          "fontSize": 96,
-          "fontWeight": 700,
+          "fontFamily": "Bebas Neue",
+          "fontSize": 120,
+          "fontWeight": 400,
           "fontColor": "#ffffff",
-          "textAlign": "center"
+          "textAlign": "center",
+          "charSpacing": 8,
+          "useGradient": true,
+          "gradientColors": ["#00D4FF", "#7B61FF"],
+          "shadowColor": "#00D4FF",
+          "shadowBlur": 20,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0
         }
       },
       {
@@ -37,7 +44,7 @@
         "timeFrame": { "start": 1500, "end": 5000 },
         "placement": {
           "x": 360,
-          "y": 580,
+          "y": 560,
           "width": 1200,
           "height": 60,
           "rotation": 0,
@@ -46,11 +53,12 @@
         },
         "properties": {
           "text": "Programmatic Video from Your Terminal",
-          "fontFamily": "Arial",
-          "fontSize": 32,
+          "fontFamily": "Montserrat",
+          "fontSize": 30,
           "fontWeight": 300,
-          "fontColor": "#00D4FF",
-          "textAlign": "center"
+          "fontColor": "#8899aa",
+          "textAlign": "center",
+          "charSpacing": 4
         }
       },
       {
@@ -61,7 +69,7 @@
         "timeFrame": { "start": 5500, "end": 10500 },
         "placement": {
           "x": 360,
-          "y": 320,
+          "y": 340,
           "width": 1200,
           "height": 100,
           "rotation": 0,
@@ -70,11 +78,15 @@
         },
         "properties": {
           "text": "How It Works",
-          "fontFamily": "Arial",
+          "fontFamily": "Montserrat",
           "fontSize": 64,
           "fontWeight": 700,
           "fontColor": "#ffffff",
-          "textAlign": "center"
+          "textAlign": "center",
+          "shadowColor": "#7B61FF",
+          "shadowBlur": 15,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0
         }
       },
       {
@@ -85,7 +97,7 @@
         "timeFrame": { "start": 6500, "end": 10500 },
         "placement": {
           "x": 260,
-          "y": 470,
+          "y": 490,
           "width": 1400,
           "height": 70,
           "rotation": 0,
@@ -93,12 +105,16 @@
           "scaleY": 1
         },
         "properties": {
-          "text": "Describe  \u2192  Generate JSON  \u2192  Render MP4",
-          "fontFamily": "Arial",
-          "fontSize": 40,
-          "fontWeight": 500,
+          "text": "Describe  →  Generate JSON  →  Render MP4",
+          "fontFamily": "Poppins",
+          "fontSize": 36,
+          "fontWeight": 700,
           "fontColor": "#00D4FF",
-          "textAlign": "center"
+          "textAlign": "center",
+          "shadowColor": "#00D4FF",
+          "shadowBlur": 10,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0
         }
       },
       {
@@ -109,7 +125,7 @@
         "timeFrame": { "start": 7500, "end": 10500 },
         "placement": {
           "x": 410,
-          "y": 570,
+          "y": 580,
           "width": 1100,
           "height": 50,
           "rotation": 0,
@@ -117,11 +133,11 @@
           "scaleY": 1
         },
         "properties": {
-          "text": "Natural language in, polished video out \u2014 in seconds",
-          "fontFamily": "Arial",
-          "fontSize": 26,
+          "text": "Natural language in, polished video out — in seconds",
+          "fontFamily": "Montserrat",
+          "fontSize": 24,
           "fontWeight": 300,
-          "fontColor": "#8090a0",
+          "fontColor": "#667788",
           "textAlign": "center"
         }
       },
@@ -133,7 +149,7 @@
         "timeFrame": { "start": 11000, "end": 17000 },
         "placement": {
           "x": 360,
-          "y": 270,
+          "y": 280,
           "width": 1200,
           "height": 100,
           "rotation": 0,
@@ -142,11 +158,15 @@
         },
         "properties": {
           "text": "Powerful Features",
-          "fontFamily": "Arial",
+          "fontFamily": "Montserrat",
           "fontSize": 64,
           "fontWeight": 700,
           "fontColor": "#ffffff",
-          "textAlign": "center"
+          "textAlign": "center",
+          "shadowColor": "#7B61FF",
+          "shadowBlur": 15,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0
         }
       },
       {
@@ -157,7 +177,7 @@
         "timeFrame": { "start": 12000, "end": 17000 },
         "placement": {
           "x": 310,
-          "y": 420,
+          "y": 430,
           "width": 1300,
           "height": 50,
           "rotation": 0,
@@ -165,9 +185,9 @@
           "scaleY": 1
         },
         "properties": {
-          "text": "30+ Animations  \u2022  20+ Transitions",
-          "fontFamily": "Arial",
-          "fontSize": 32,
+          "text": "30+ Animations  •  20+ Transitions",
+          "fontFamily": "Poppins",
+          "fontSize": 30,
           "fontWeight": 400,
           "fontColor": "#00D4FF",
           "textAlign": "center"
@@ -181,7 +201,7 @@
         "timeFrame": { "start": 13000, "end": 17000 },
         "placement": {
           "x": 310,
-          "y": 500,
+          "y": 510,
           "width": 1300,
           "height": 50,
           "rotation": 0,
@@ -189,9 +209,9 @@
           "scaleY": 1
         },
         "properties": {
-          "text": "50+ Visual Effects \u2014 Glow, VHS, Rain, Glitch & More",
-          "fontFamily": "Arial",
-          "fontSize": 32,
+          "text": "50+ Visual Effects — Glow, VHS, Rain, Glitch & More",
+          "fontFamily": "Poppins",
+          "fontSize": 30,
           "fontWeight": 400,
           "fontColor": "#00D4FF",
           "textAlign": "center"
@@ -205,7 +225,7 @@
         "timeFrame": { "start": 14000, "end": 17000 },
         "placement": {
           "x": 310,
-          "y": 580,
+          "y": 590,
           "width": 1300,
           "height": 50,
           "rotation": 0,
@@ -213,9 +233,9 @@
           "scaleY": 1
         },
         "properties": {
-          "text": "Keyframe Animation  \u2022  Timed Captions  \u2022  Any Aspect Ratio",
-          "fontFamily": "Arial",
-          "fontSize": 32,
+          "text": "Keyframe Animation  •  Timed Captions  •  Any Aspect Ratio",
+          "fontFamily": "Poppins",
+          "fontSize": 30,
           "fontWeight": 400,
           "fontColor": "#00D4FF",
           "textAlign": "center"
@@ -229,7 +249,7 @@
         "timeFrame": { "start": 17500, "end": 23000 },
         "placement": {
           "x": 260,
-          "y": 320,
+          "y": 340,
           "width": 1400,
           "height": 100,
           "rotation": 0,
@@ -238,11 +258,15 @@
         },
         "properties": {
           "text": "AI-Powered Creation",
-          "fontFamily": "Arial",
+          "fontFamily": "Montserrat",
           "fontSize": 64,
           "fontWeight": 700,
           "fontColor": "#ffffff",
-          "textAlign": "center"
+          "textAlign": "center",
+          "shadowColor": "#7B61FF",
+          "shadowBlur": 15,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0
         }
       },
       {
@@ -253,7 +277,7 @@
         "timeFrame": { "start": 18500, "end": 23000 },
         "placement": {
           "x": 310,
-          "y": 470,
+          "y": 490,
           "width": 1300,
           "height": 60,
           "rotation": 0,
@@ -262,11 +286,15 @@
         },
         "properties": {
           "text": "Built-in Claude Code Skill",
-          "fontFamily": "Arial",
-          "fontSize": 36,
-          "fontWeight": 500,
+          "fontFamily": "Poppins",
+          "fontSize": 34,
+          "fontWeight": 700,
           "fontColor": "#00D4FF",
-          "textAlign": "center"
+          "textAlign": "center",
+          "shadowColor": "#00D4FF",
+          "shadowBlur": 8,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0
         }
       },
       {
@@ -277,7 +305,7 @@
         "timeFrame": { "start": 19500, "end": 23000 },
         "placement": {
           "x": 360,
-          "y": 560,
+          "y": 570,
           "width": 1200,
           "height": 50,
           "rotation": 0,
@@ -285,11 +313,11 @@
           "scaleY": 1
         },
         "properties": {
-          "text": "Just describe your video \u2014 Claude handles the rest",
-          "fontFamily": "Arial",
-          "fontSize": 28,
+          "text": "Just describe your video — Claude handles the rest",
+          "fontFamily": "Montserrat",
+          "fontSize": 26,
           "fontWeight": 300,
-          "fontColor": "#8090a0",
+          "fontColor": "#667788",
           "textAlign": "center"
         }
       },
@@ -310,11 +338,17 @@
         },
         "properties": {
           "text": "Get Started",
-          "fontFamily": "Arial",
+          "fontFamily": "Montserrat",
           "fontSize": 80,
           "fontWeight": 700,
           "fontColor": "#ffffff",
-          "textAlign": "center"
+          "textAlign": "center",
+          "useGradient": true,
+          "gradientColors": ["#ffffff", "#00D4FF"],
+          "shadowColor": "#00D4FF",
+          "shadowBlur": 20,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0
         }
       },
       {
@@ -324,21 +358,26 @@
         "opacity": 1,
         "timeFrame": { "start": 25000, "end": 30000 },
         "placement": {
-          "x": 260,
+          "x": 360,
           "y": 480,
-          "width": 1400,
-          "height": 50,
+          "width": 1200,
+          "height": 60,
           "rotation": 0,
           "scaleX": 1,
           "scaleY": 1
         },
         "properties": {
           "text": "npx hypr-video-cli input.json -o output.mp4",
-          "fontFamily": "Courier New",
-          "fontSize": 30,
+          "fontFamily": "Fira Code",
+          "fontSize": 28,
           "fontWeight": 400,
           "fontColor": "#00D4FF",
-          "textAlign": "center"
+          "textAlign": "center",
+          "backgroundColor": "rgba(0,212,255,0.08)",
+          "shadowColor": "#00D4FF",
+          "shadowBlur": 6,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0
         }
       },
       {
@@ -357,11 +396,11 @@
           "scaleY": 1
         },
         "properties": {
-          "text": "Open Source  \u2022  MIT License  \u2022  Node.js >= 20",
-          "fontFamily": "Arial",
-          "fontSize": 24,
+          "text": "Open Source  •  MIT License  •  Node.js >= 20",
+          "fontFamily": "Montserrat",
+          "fontSize": 22,
           "fontWeight": 300,
-          "fontColor": "#8090a0",
+          "fontColor": "#667788",
           "textAlign": "center"
         }
       },
@@ -369,88 +408,112 @@
         "id": "el_line1",
         "type": "shape",
         "name": "Hero Accent Line",
-        "opacity": 0.8,
+        "opacity": 0.9,
         "timeFrame": { "start": 800, "end": 5000 },
         "placement": {
           "x": 810,
-          "y": 555,
+          "y": 535,
           "width": 300,
-          "height": 2,
+          "height": 3,
           "rotation": 0,
           "scaleX": 1,
           "scaleY": 1
         },
-        "properties": { "shapeType": "rect", "fill": "#00D4FF" }
+        "properties": {
+          "shapeType": "rect",
+          "fill": "#7B61FF",
+          "rx": 2,
+          "ry": 2
+        }
       },
       {
         "id": "el_line2",
         "type": "shape",
         "name": "Pipeline Accent Line",
-        "opacity": 0.8,
+        "opacity": 0.9,
         "timeFrame": { "start": 5500, "end": 10500 },
         "placement": {
           "x": 860,
-          "y": 435,
+          "y": 450,
           "width": 200,
-          "height": 2,
+          "height": 3,
           "rotation": 0,
           "scaleX": 1,
           "scaleY": 1
         },
-        "properties": { "shapeType": "rect", "fill": "#00D4FF" }
+        "properties": {
+          "shapeType": "rect",
+          "fill": "#7B61FF",
+          "rx": 2,
+          "ry": 2
+        }
       },
       {
         "id": "el_line3",
         "type": "shape",
         "name": "Features Accent Line",
-        "opacity": 0.8,
+        "opacity": 0.9,
         "timeFrame": { "start": 11000, "end": 17000 },
         "placement": {
           "x": 860,
-          "y": 385,
+          "y": 395,
           "width": 200,
-          "height": 2,
+          "height": 3,
           "rotation": 0,
           "scaleX": 1,
           "scaleY": 1
         },
-        "properties": { "shapeType": "rect", "fill": "#00D4FF" }
+        "properties": {
+          "shapeType": "rect",
+          "fill": "#7B61FF",
+          "rx": 2,
+          "ry": 2
+        }
       },
       {
         "id": "el_line4",
         "type": "shape",
         "name": "AI Accent Line",
-        "opacity": 0.8,
+        "opacity": 0.9,
         "timeFrame": { "start": 17500, "end": 23000 },
         "placement": {
           "x": 860,
-          "y": 435,
+          "y": 450,
           "width": 200,
-          "height": 2,
+          "height": 3,
           "rotation": 0,
           "scaleX": 1,
           "scaleY": 1
         },
-        "properties": { "shapeType": "rect", "fill": "#00D4FF" }
+        "properties": {
+          "shapeType": "rect",
+          "fill": "#7B61FF",
+          "rx": 2,
+          "ry": 2
+        }
       },
       {
         "id": "el_line5",
         "type": "shape",
         "name": "CTA Accent Line",
-        "opacity": 0.8,
+        "opacity": 0.9,
         "timeFrame": { "start": 24000, "end": 30000 },
         "placement": {
           "x": 810,
-          "y": 445,
+          "y": 440,
           "width": 300,
-          "height": 2,
+          "height": 3,
           "rotation": 0,
           "scaleX": 1,
           "scaleY": 1
         },
-        "properties": { "shapeType": "rect", "fill": "#00D4FF" }
+        "properties": {
+          "shapeType": "rect",
+          "fill": "#7B61FF",
+          "rx": 2,
+          "ry": 2
+        }
       },
-
       {
         "id": "el_fx_leak1",
         "type": "effect",
@@ -470,16 +533,20 @@
             {
               "effectType": "lightLeak",
               "effectParams": {
-                "intensity": 0.2,
-                "colorR": 0,
-                "colorG": 0.83,
+                "intensity": 0.15,
+                "colorR": 0.48,
+                "colorG": 0.38,
                 "colorB": 1
               },
               "enabled": true
             },
             {
               "effectType": "glow",
-              "effectParams": { "intensity": 0.35, "radius": 10, "threshold": 0.3 },
+              "effectParams": {
+                "intensity": 0.3,
+                "radius": 12,
+                "threshold": 0.3
+              },
               "enabled": true
             }
           ]
@@ -504,16 +571,20 @@
             {
               "effectType": "lightLeak",
               "effectParams": {
-                "intensity": 0.18,
-                "colorR": 0.48,
-                "colorG": 0.38,
+                "intensity": 0.15,
+                "colorR": 0,
+                "colorG": 0.83,
                 "colorB": 1
               },
               "enabled": true
             },
             {
               "effectType": "glow",
-              "effectParams": { "intensity": 0.3, "radius": 10, "threshold": 0.3 },
+              "effectParams": {
+                "intensity": 0.25,
+                "radius": 12,
+                "threshold": 0.3
+              },
               "enabled": true
             }
           ]
@@ -538,16 +609,20 @@
             {
               "effectType": "lightLeak",
               "effectParams": {
-                "intensity": 0.18,
-                "colorR": 0,
-                "colorG": 0.83,
+                "intensity": 0.15,
+                "colorR": 0.48,
+                "colorG": 0.38,
                 "colorB": 1
               },
               "enabled": true
             },
             {
               "effectType": "glow",
-              "effectParams": { "intensity": 0.3, "radius": 10, "threshold": 0.3 },
+              "effectParams": {
+                "intensity": 0.25,
+                "radius": 12,
+                "threshold": 0.3
+              },
               "enabled": true
             }
           ]
@@ -572,16 +647,20 @@
             {
               "effectType": "lightLeak",
               "effectParams": {
-                "intensity": 0.22,
-                "colorR": 0.48,
-                "colorG": 0.38,
+                "intensity": 0.18,
+                "colorR": 0,
+                "colorG": 0.83,
                 "colorB": 1
               },
               "enabled": true
             },
             {
               "effectType": "glow",
-              "effectParams": { "intensity": 0.35, "radius": 10, "threshold": 0.3 },
+              "effectParams": {
+                "intensity": 0.3,
+                "radius": 12,
+                "threshold": 0.3
+              },
               "enabled": true
             }
           ]
@@ -605,7 +684,35 @@
           "effectLayers": [
             {
               "effectType": "sparkle",
-              "effectParams": { "intensity": 0.2, "density": 0.2, "size": 2 },
+              "effectParams": { "intensity": 0.15, "density": 0.15, "size": 2 },
+              "enabled": true
+            }
+          ]
+        }
+      },
+      {
+        "id": "el_fx_vignette",
+        "type": "effect",
+        "name": "Global Vignette",
+        "timeFrame": { "start": 0, "end": 30000 },
+        "placement": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1080,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "properties": {
+          "effectLayers": [
+            {
+              "effectType": "vignette",
+              "effectParams": {
+                "intensity": 0.4,
+                "radius": 0.8,
+                "softness": 0.6
+              },
               "enabled": true
             }
           ]
@@ -680,7 +787,8 @@
           "el_fx_leak2",
           "el_fx_leak3",
           "el_fx_leak4",
-          "el_fx_sparkle"
+          "el_fx_sparkle",
+          "el_fx_vignette"
         ],
         "isVisible": true
       }
@@ -944,15 +1052,6 @@
       },
 
       {
-        "id": "a_l1_out",
-        "targetId": "el_line1",
-        "type": "fadeOut",
-        "duration": 500,
-        "group": "out",
-        "easing": "easeIn",
-        "properties": {}
-      },
-      {
         "id": "a_l1_loop",
         "targetId": "el_line1",
         "type": "pulse",
@@ -962,8 +1061,8 @@
         "properties": {}
       },
       {
-        "id": "a_l2_out",
-        "targetId": "el_line2",
+        "id": "a_l1_out",
+        "targetId": "el_line1",
         "type": "fadeOut",
         "duration": 500,
         "group": "out",
@@ -980,8 +1079,8 @@
         "properties": {}
       },
       {
-        "id": "a_l3_out",
-        "targetId": "el_line3",
+        "id": "a_l2_out",
+        "targetId": "el_line2",
         "type": "fadeOut",
         "duration": 500,
         "group": "out",
@@ -998,8 +1097,8 @@
         "properties": {}
       },
       {
-        "id": "a_l4_out",
-        "targetId": "el_line4",
+        "id": "a_l3_out",
+        "targetId": "el_line3",
         "type": "fadeOut",
         "duration": 500,
         "group": "out",
@@ -1016,6 +1115,15 @@
         "properties": {}
       },
       {
+        "id": "a_l4_out",
+        "targetId": "el_line4",
+        "type": "fadeOut",
+        "duration": 500,
+        "group": "out",
+        "easing": "easeIn",
+        "properties": {}
+      },
+      {
         "id": "a_l5_loop",
         "targetId": "el_line5",
         "type": "pulse",
@@ -1028,7 +1136,7 @@
     "captions": [],
     "globalCaptionStyle": {
       "fontSize": 36,
-      "fontFamily": "Arial",
+      "fontFamily": "Montserrat",
       "fontColor": "#ffffff",
       "fontWeight": 700,
       "textAlign": "center",
@@ -1220,42 +1328,6 @@
         "targetElementId": "el_cta_title",
         "type": "dissolve",
         "duration": 600,
-        "easing": "easeInOut"
-      },
-      {
-        "id": "tr_sub1_1_2",
-        "trackId": "track_sub1",
-        "sourceElementId": "el_hero_tag",
-        "targetElementId": "el_pipe_step",
-        "type": "dissolve",
-        "duration": 500,
-        "easing": "easeInOut"
-      },
-      {
-        "id": "tr_sub1_2_3",
-        "trackId": "track_sub1",
-        "sourceElementId": "el_pipe_step",
-        "targetElementId": "el_feat1",
-        "type": "dissolve",
-        "duration": 500,
-        "easing": "easeInOut"
-      },
-      {
-        "id": "tr_sub1_3_4",
-        "trackId": "track_sub1",
-        "sourceElementId": "el_feat1",
-        "targetElementId": "el_ai_desc",
-        "type": "dissolve",
-        "duration": 500,
-        "easing": "easeInOut"
-      },
-      {
-        "id": "tr_sub1_4_5",
-        "trackId": "track_sub1",
-        "sourceElementId": "el_ai_desc",
-        "targetElementId": "el_cta_cmd",
-        "type": "dissolve",
-        "duration": 500,
         "easing": "easeInOut"
       }
     ]
