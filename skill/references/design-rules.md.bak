@@ -1,0 +1,175 @@
+---
+name: design-rules
+description: Mandatory design rules for video generation — typography, colors, animation pacing, transitions, layout, SVG layers, and keyframes. Always load before building config.
+---
+
+# Design Rules
+
+> **Contents:** Text & Typography · Colors · Animation Pacing · Scene Transitions · Layout Grid (Landscape / Vertical / Square) · Layout Patterns · Spacing · Scene Duration · SVG Layers · Keyframes · Common Render Errors
+
+## Colors
+
+Use `theme(name)` — provides `t.BG / t.PRIMARY / t.SECONDARY / t.ACCENT / t.SUCCESS` automatically. See gen-canvas.md for the full theme list.
+
+
+## Animation Pacing
+
+1. **Every visible element: both `animIn` + `animOut`** — no exceptions.
+2. **Stagger: 300–500ms between elements per scene**, max 800ms.
+3. **Duration by role:**
+
+| Role | Entrance | Exit |
+| ---- | -------- | ---- |
+| Hero | 1200–1500ms | 700–900ms |
+| Heading | 800–1000ms | 500–600ms |
+| Subtitle | 600–800ms | 400–500ms |
+| Body / Label | 400–600ms | 300–400ms |
+
+4. **Easing:** `easeOut` entrances · `easeIn` exits · `easeInOut` loops.
+
+## Scene Transitions
+
+1. **500ms scene bleed** — next scene's SVG backgrounds start 500ms before current text exits. Avoids black gaps.
+2. **Transition duration: 400–600ms**, max 800ms.
+3. **Max 2 effect types per video.** Limits: flash intensity ≤ 0.7, shake intensity ≤ 6.
+
+### Canvas Formats
+
+| Format | Size | buildCanvas | Scale | Use Case |
+| ------ | ---- | ----------- | ----- | -------- |
+| Landscape | 1920×1080 | default | 1.0 | YouTube, ads, presentations |
+| Vertical | 1080×1920 | `width:1080, height:1920` | ×0.7 | TikTok, Reels, Stories |
+| Square | 1080×1080 | `width:1080, height:1080` | ×0.8 | Instagram feed, LinkedIn |
+
+Apply scale to all font sizes, element dimensions, and gaps when using non-default formats.
+
+---
+
+### 1920×1080 — Landscape (default)
+
+**Safe margins:** x=120–1800, y=80–1000 · **Center:** x=960
+
+**Centered tiers:**
+
+| Content | x | w | h |
+| ------- | - | - | - |
+| Hero / Display | 160 | 1600 | 160 / 130 |
+| Heading / Subtitle | 260 | 1400 | 90 / 60 |
+| Body / Label | 460 | 1000 | 44 / 40 |
+| CTA button | 560 | 800 | 48–64 |
+
+**Vertical zones:**
+
+| Zone | y | Content |
+| ---- | - | ------- |
+| Top | 80–180 | Eyebrow, tag |
+| Upper | 200–450 | Hero, heading, display stat |
+| Center | 400–680 | Subtitle, feature list |
+| Lower | 620–860 | Body, CTA button |
+| Bottom | 860–1000 | Label, footnote |
+
+**Split layout (comparison / feature):** Left col x=120 w=780 · Right col x=1020 w=780
+
+---
+
+### 1080×1920 — Vertical (×0.7 scale)
+
+**Safe margins:** x=60–1020, y=150–1770 · **Center:** x=540
+
+**Centered tiers:**
+
+| Content | x | w |
+| ------- | - | - |
+| Hero / Heading | 80 | 920 |
+| Subtitle / Body | 120 | 840 |
+| CTA button | 190 | 700 |
+
+**Vertical zones:**
+
+| Zone | y | Content |
+| ---- | - | ------- |
+| Hook | 150–420 | Eyebrow + hero headline |
+| Content | 420–1500 | Feature list, stats, story |
+| CTA | 1520–1770 | CTA button + footnote |
+
+---
+
+### 1080×1080 — Square (×0.8 scale)
+
+**Safe margins:** x=60–1020, y=60–1020 · **Center:** x=540
+
+**Centered tiers:**
+
+| Content | x | w |
+| ------- | - | - |
+| Hero / Heading | 80 | 920 |
+| Subtitle / Body | 140 | 800 |
+| CTA button | 190 | 700 |
+
+**Vertical zones:**
+
+| Zone | y | Content |
+| ---- | - | ------- |
+| Top | 60–200 | Eyebrow, logo |
+| Main | 200–800 | Headline + subtitle + feature |
+| CTA | 800–1020 | CTA button + label |
+
+---
+
+### Layout Patterns
+
+| Pattern | When to use | Structure |
+| ------- | ----------- | --------- |
+| **Full center** | Brand reveal, CTA | Heading → divider → subtitle vertically centered |
+| **Hero + list** | Feature scenes | Heading (top 35%) + 3–4 body items (bottom 65%) |
+| **Stat focus** | Social proof, data | `t.display` large number + subtitle label, centered |
+| **Split 50/50** | Comparison, before/after | Left col text + Right col SVG/visual |
+| **Timeline** | Process, steps | `svgStepIndicator` + body labels staggered down |
+
+---
+
+### Spacing Rules
+
+- heading→divider: 5–10px · divider→subtitle: 20–30px
+- Between feature rows: 130–145px · Between sections: 70–90px
+- **Accent divider:** `makeShape("div", "rect", t.ACCENT, { x: 760, y, w: 400, h: 3 })`
+- **Text over image/video:** `shadowBlur >= 8` or `strokeWidth: 1–2`
+
+## Scene Duration & Pacing
+
+| Scene Type | Duration | Element Stagger |
+| ---------- | -------- | --------------- |
+| Hero / brand | 4–6s | Title +500ms, subtitle +700ms |
+| Feature | 5–7s | Items +300–500ms apart |
+| Text-heavy | 6–8s | Allow reading time |
+| CTA / closing | 4–6s | +800–1000ms for CTA button |
+
+## SVG Background Layers
+
+1. **2–4 helpers per scene**, max 5 (prevents shader compilation timeout).
+2. **Opacity by depth:**
+
+| Layer | Opacity | Examples |
+| ----- | ------- | -------- |
+| Far background | 0.03–0.06 | `svgDotGrid` · `svgGridPattern` · `svgLightStreak` |
+| Mid background | 0.06–0.15 | `svgGradientOrb` · `svgAurora` · `svgHexGrid` |
+| Foreground decoration | 0.2–0.5 | `svgParticles` · `svgConfetti` · `svgShootingStar` |
+| UI overlay | 0.5–1.0 | `svgCheckMark` · `svgBadgeStamp` · `svgArrowPointer` |
+
+3. **Global layers** (`svgVignette`, `svgDotGrid`) span `0–maxTime`. Vignette opacity: 0.5–0.7.
+
+## Keyframes
+
+1. **Position keyframe initial `{x, y}` must exactly match element placement** — mismatches cause frame-1 jumps.
+2. **Prefer `scale`/`opacity` keyframes** for subtle motion. Amplitude: scale ±0.02–0.03, opacity ±0.15–0.20.
+3. **3–5 tracks per video**, max 8.
+
+## Common Render Errors
+
+| Error | Cause | Fix |
+| ----- | ----- | --- |
+| Shader timeout | Too many SVG layers with blur on same frame | ≤ 4 SVGs per scene, lower opacity |
+| Font not found | Name mismatch in `fontAssets` | Check exact spelling |
+| Blank/black video | `isVisible` missing on tracks | Use `autoTracks` (auto-sets) |
+| Elements cut off | `maxTime` < last element end | Set `maxTime` >= largest end time |
+| Flickering | Overlapping elements on same track | `autoTracks` splits them automatically |

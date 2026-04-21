@@ -1,0 +1,53 @@
+---
+name: scene-planning
+description: Video type templates, scene structures, recommended themes, and SVG helper recipes. Load when planning video scenes.
+---
+
+# Scene Planning Guide
+
+Identify **video type** → choose **theme** → plan **scenes** → pick SVG helpers per scene.
+
+## Video Type → Scene Structure + Recommended Themes
+
+| Video Type | Typical Scenes | Duration | Themes |
+| ---------- | -------------- | -------- | ------ |
+| **SaaS Promo** | Hero → Pain Point → Features → Social Proof → CTA | 25–35s | `cyberpunk` `midnight` `ocean` |
+| **Product Launch** | Countdown → Reveal → Key Features → Pricing → CTA | 20–30s | `cinematic` `aurora` `gold` |
+| **Tutorial Intro** | Title → Steps/Outline → Prerequisites → Let's Go | 10–20s | `professional` `minimal` `slate` |
+| **Event Announcement** | Date/Venue → Speakers → Highlights → Register CTA | 20–30s | `gradient` `candy` `coral` |
+| **Sales/Discount** | Teaser → Price Reveal → Benefits → Urgency CTA | 15–25s | `ember` `neon` `retro` |
+| **Company Intro** | Brand → Mission → Stats → Team → Contact | 25–40s | `cinematic` `ocean` `gold` |
+| **Social Reel** | Hook (2s) → Content (8–12s) → CTA (3s) | 15–20s | `candy` `electric` `neon` |
+| **Data Dashboard** | Overview → Charts → KPIs → Insights → Summary | 20–30s | `midnight` `slate` `professional` |
+| **Health / Eco** | Problem → Solution → Impact Stats → Join CTA | 20–30s | `forest` `pastel` `warm` |
+| **Dev / Open Source** | Demo → Architecture → Benchmarks → Contribute CTA | 20–30s | `tech` `midnight` `cyberpunk` |
+| **Fashion / Lifestyle** | Mood → Collection → Details → Shop CTA | 15–25s | `coral` `sunset` `noir` |
+| **Nostalgia / Heritage** | Origin → Journey → Milestones → Legacy | 25–40s | `vintage` `gold` `monochrome` |
+
+## Scene Purpose → SVG Recipe
+
+Pick 2–4 per scene. **Vary choices between scenes** — don't repeat the same combo.
+
+| Scene Purpose | SVG Helpers |
+| ------------- | ----------- |
+| Hero / Brand | `svgGradientOrb` · `svgVignette` · `svgBreathingRing` / `svgNeonRing` · `svgBurstRays` · `svgParticles` / `svgTwinkleStars` · `svgLiquidBlob` |
+| Feature / Benefit | `svgCheckMark` · `svgCornerBrackets` · `svgGradientBorder` · `svgStepIndicator` · `svgHexGrid` · `svgCircuitTrace` |
+| Data / Stats | `svgStatCard` · `svgNumberCounter` · `svgBarChart` / `svgHBarChart` · `svgLineChart` / `svgAreaChart` · `svgDonutChart` · `svgRadarChart` · `svgGauge` · `svgTable` · `svgCompareBar` · `svgFunnel` |
+| Social Proof | `svgStarRating` · `svgLikeHeart` · `svgNumberCounter` · `svgBadgeStamp` |
+| Pricing / Sales | `svgPriceTag` · `svgCountdownRing` · `svgConfetti` · `svgBurstRays` · `svgBadgeStamp` |
+| CTA / Closing | `svgArrowPointer` · `svgConfetti` · `svgFireworks` · `svgAurora` · `svgPulseRipple` |
+| Tech / Code | `svgTypewriter` · `svgTypingCursor` · `svgMatrixRain` · `svgCircuitTrace` · `svgParticleNetwork` · `svgRotatingGear` · `svgDataFlow` |
+| Background | `svgVignette` · `svgGridPattern` / `svgDotGrid` · `svgGlowOrb` · `svgLightStreak` · `svgConcentricRings` · `svgDiamond` · `svgMorphShape` · `svgColorMorph` |
+
+## Animation Variety Guide
+
+Avoid repeating the same entrance animation across all scenes. Mix per scene mood:
+
+| Scene Mood | Suggested `animIn` | Suggested `animLoop` |
+| ---------- | ------------------- | -------------------- |
+| Grand reveal | `blurIn` · `expandIn` | `glow` · `breathe` |
+| Energetic | `bounceIn` · `elasticIn` · `zoomIn` | `pulse` · `bounce` · `shake` |
+| Elegant | `fadeIn` · `slideIn` | `float` · `breathe` |
+| Dramatic | `curtainIn` · `irisIn` · `morphIn` | `glow` · `heartbeat` |
+| Playful | `waveIn` · `dropIn` · `spiralIn` | `wobble` · `jello` · `rubberBand` |
+| Technical | `pixelateIn` · `foldIn` | `glitch` · `rotate` |

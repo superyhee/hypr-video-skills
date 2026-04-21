@@ -1,204 +1,133 @@
 ---
 name: hypr-video-cli
 description: >
-  Create programmatic videos from JSON via CLI. Generate canvasState JSON and render to MP4 locally.
-  Use when: (1) user asks to make, create, or generate a video, promo, clip, or animation from a description,
-  (2) composing video/image/text/shape elements into a rendered video,
-  (3) building or editing canvasState JSON for video rendering,
-  (4) rendering video via CLI (npx hypr-video-cli),
-  (5) generating video with animations, transitions, captions, keyframes, or visual effects.
-  Triggers on: "make me a video", "create a promo clip", "render an MP4", "product launch video",
-  "social media video", "tutorial intro", "animated text", "video from this description".
-  Do NOT use for frontend UI changes, MobX store, or code editing.
+  Generates MP4 videos from canvasState JSON via CLI. Builds canvasState JSON with elements,
+  animations, transitions, keyframes, captions, and effects, then renders with `npx hypr-video-cli`.
+  Activates when creating videos, promos, clips, or animations from descriptions; composing
+  video/image/text/shape/audio elements on a timeline; building canvasState JSON; rendering MP4.
+  Triggers: "make a video", "create a promo", "render MP4", "product launch video", "social media clip",
+  "animated text", "tutorial intro", "video from JSON", "social media reel".
+  Does NOT handle frontend UI code, MobX store editing, or React component development.
 ---
 
-# hypr-video-cli
+# Video Generation via CLI
+
+## Quick Reference
+
+```bash
+# Write config → generate JSON → render
+node scripts/gen_canvas.mjs /tmp/video-<name>.mjs /tmp/video-<name>.json
+npx hypr-video-cli /tmp/video-<name>.json -o ./output/<name>.mp4
+```
 
 ## Workflow
 
-1. Read relevant references below, then build canvasState JSON
-2. Save JSON to `/tmp/video-<name>.json`
-3. Validate: `npx tsx scripts/validate-canvas-state.ts /tmp/video-<name>.json`
-4. Render: `npx hypr-video-cli /tmp/video-<name>.json -o ./output/<name>.mp4`
-5. On failure: check error output, fix JSON, re-validate, re-render
+```
+- [ ] Step 1: Read references & plan scenes
+- [ ] Step 2: Build config & generate JSON
+- [ ] Step 3: Render & verify
+```
 
-CLI options: `--fps 24|30|60`, `--quality low|medium|high|very_high`, `--format mp4|mov|mp3`, `--width N`, `--height N`, `-q` (quiet mode). CLI options override JSON values.
+### Step 1 — Read references & plan scenes
 
-Prerequisites: Node.js >= 20, FFmpeg.
+**1a.** Read these references (always required):
+
+- [gen-canvas.md](references/gen-canvas.md) — config spec: `theme()` (24 themes), 11 role helpers, `autoTracks()`, inline `animIn`/`animOut`/`kf`, SVG helpers, `buildCanvas`. Pitfalls are inline with ⚠️ markers.
+
+**1b.** Plan scenes: identify video type, list scene names/durations, pick best SVG helpers per scene, pick best elements and emoji.
+
+**1c.** Read extras based on the plan:
+
+| When | Reference |
+| ---- | --------- |
+| Using SVG helpers (almost always) | [svg-helpers.md](references/svg-helpers.md) — params for all 65 helpers |
+| Choosing fonts | [font-assets.md](references/font-assets.md) — 18 bundled fonts & pairings |
+| Adding emoji/unicode decorations | [icons.md](references/icons.md) |
+
+### Step 2 — Build config & generate JSON
+
+**2a.** Write a config `.mjs` file. Config and JSON go in `/tmp/` — never write to `examples/`.
+
+```js
+export default function build(h) {
+  const {
+    makeShape, makeEffect, buildCanvas, theme, autoTracks,
+    svgVignette, svgDotGrid, svgGradientOrb, svgParticles,
+    svgCheckMark, svgNumberCounter, // ...SVG helpers as needed
+  } = h;
+
+  const t = theme("cyberpunk");  // 24 themes — colors + role helpers + fonts
+  const MAX = 25000;
+
+  // ── Global layers ──
+  const g_dot = svgDotGrid("g_dot", { start: 0, end: MAX, opacity: 0.04, color: t.ACCENT });
+  const g_vig = svgVignette("g_vig", { start: 0, end: MAX, opacity: 0.6 });
+
+  // ── Scene 1: Hero (0–7s) ──
+  const s1_orb = svgGradientOrb("s1_orb", {
+    x: 360, y: 60, w: 1200, h: 960, start: 0, end: 7500, opacity: 0.10, color: t.ACCENT,
+  });
+  const s1_title = t.hero("s1_title", "Product Name", {
+    x: 160, y: 340, start: 0, end: 7000,
+    animIn: ["blurIn", 1200], animOut: ["blurOut", 700],
+    kf: { scale: { dur: 7000, amp: 0.02 } },
+  });
+  const s1_div = makeShape("s1_div", "rect", t.ACCENT, {
+    x: 760, y: 510, w: 400, h: 3, start: 500, end: 6500,
+    animIn: ["expandIn", 500], animOut: ["fadeOut", 300],
+  });
+  const s1_sub = t.subtitle("s1_sub", "Tagline goes here", {
+    x: 260, y: 540, start: 700, end: 6500,
+    animIn: ["fadeIn", 800], animOut: ["fadeOut", 500],
+  });
+
+  // ── Scene 2: Features (6.5–16s) ──
+  // ... more scenes follow the same pattern
+
+  const elements = [g_dot, g_vig, s1_orb, s1_title, s1_div, s1_sub /* ... */];
+
+  return buildCanvas({
+    bg: t.BG, maxTime: MAX,
+    // t.fonts is an OBJECT { Montserrat: {...}, "Fira Code": {...}, ... } — NOT an array
+    // To add extra fonts (e.g. CJK), use object spread:
+    fontAssets: {
+      ...t.fonts,
+      "Noto Sans SC": { url: "skill/assets/fonts/NotoSansSC-Variable.ttf", fileType: "ttf" },
+    },
+    elements, tracks: autoTracks(elements),
+    fps: 30, quality: "medium",
+  });
+}
+```
+
+```bash
+node scripts/gen_canvas.mjs /tmp/video-<name>.mjs /tmp/video-<name>.json
+```
+
+**2b.** Before rendering, verify:
+
+1. All text uses role helpers (`t.hero` … `t.eyebrow`) — use raw `makeText` only for custom font/size/color (e.g. code blocks, CJK with `Noto Sans SC`)
+2. Every visible element has `animIn` + `animOut`; stagger 300–500ms between elements
+3. SVG bg opacity ≤ 0.15; 2–4 helpers per scene; global layers span `0–MAX`
+4. `maxTime` >= last element's `end`
+
+### Step 3 — Render & verify
+
+```bash
+npx hypr-video-cli /tmp/video-<name>.json -o ./output/<name>.mp4
+```
+
+CLI flags: `--fps 24|30|60`, `--quality low|medium|high|very_high`, `--format mp4|mov|mp3`, `--width N`, `--height N`, `-q` (quiet).
+
+If render fails → check ⚠️ pitfalls in [gen-canvas.md](references/gen-canvas.md) 
 
 ## Critical Rules
 
-Violating these produces blank or broken output:
-
-1. **Tracks: `"isVisible": true` required** — defaults to `false` if omitted, entire track invisible
-2. **`opacity` is top-level on element, NOT inside `placement`** — `placement.opacity` silently ignored
-3. **Text uses `fontColor`, NOT `fill`** — `fill` is shapes only; missing `fontColor` defaults to `#000000`
-4. **`maxTime` >= largest `timeFrame.end`** — elements cut off otherwise
-5. **Every track needs `"name"`** — omitting causes rendering errors
-6. **Time units:** `timeFrame`/animations/transitions = ms; captions = SRT `"HH:MM:SS.mmm"`; `wordTimings` = seconds (float); keyframe `time` = ms relative to element start
-7. **Transitions require adjacent elements on same track** — cross-track transitions fail
-8. **Track layer order: first track = topmost layer** — `tracks[0]` renders on top, last track is the bottom layer. Put text tracks first, effect tracks last. Effect elements are post-processing overlays and should always be on bottom tracks to avoid occluding content
-9. **Use `backgroundColor` instead of background shape elements** — a full-screen shape element on the top track will occlude all content below it and produce a blank video. Set canvas background color via the top-level `backgroundColor` field instead
-10. **Group elements by role into tracks; non-overlapping elements of the same role share one track** — e.g. put all titles on one track, all subtitles on another, all descriptions on a third. Elements within a track must not overlap in time (e.g. titles appear one after another). Only elements that need to be visible simultaneously (e.g. a title and its subtitle) require separate tracks. Same principle applies to other element types (shape, video, image)
-11. **Use safe fonts** — system fonts only (Arial, Georgia, Times New Roman, Courier New, Verdana). For custom fonts, register via `fontAssets` in canvasState
-
-See [common-mistakes.md](references/common-mistakes.md) for detailed explanations with code examples.
-
-## Animations vs Transitions
-
-These are two different systems — do NOT confuse them:
-
-### Animations — per-element entrance/exit/loop effects
-
-Use `animations` to control how a **single element** appears, disappears, or continuously moves. Each animation targets one element by `targetId`.
-
-- **Entrance** (`group: "in"`): `fadeIn`, `slideIn`, `zoomIn`, `bounceIn`, `dropIn`, `waveIn`, etc.
-- **Exit** (`group: "out"`): `fadeOut`, `slideOut`, `zoomOut`, `dropOut`, `waveOut`, etc.
-- **Loop** (`group: "loop"`): `breathe`, `rotate`, `bounce`, `shake`, `pulse`, `swing`, etc.
-
-```json
-{
-  "id": "a_1",
-  "targetId": "el_title",
-  "type": "fadeIn",
-  "duration": 800,
-  "group": "in",
-  "easing": "easeOut",
-  "properties": {}
-}
-```
-
-### Transitions — scene-to-scene blending
-
-Use `transitions` to blend between **two adjacent elements on the same track** for smooth scene changes. Both elements must be neighbors in the track's `elementIds` array.
-
-- **Basic**: `crossfade`, `dissolve`, `fadeToBlack`, `fadeToWhite`
-- **Wipe**: `wipeLeft`, `wipeRight`, `wipeUp`, `wipeDown`, `radialWipe`
-- **Slide**: `slideLeft`, `slideRight`, `slideUp`, `slideDown`
-- **Creative**: `irisOpen`, `irisClose`, `curtainOpen`, `curtainClose`, `pixelate`, `blur`, `zoomIn`, `zoomOut`, `glitch`
-
-```json
-{
-  "id": "tr_1",
-  "trackId": "track_v",
-  "sourceElementId": "el_scene1",
-  "targetElementId": "el_scene2",
-  "type": "crossfade",
-  "duration": 500,
-  "easing": "easeInOut"
-}
-```
-
-### When to use which
-
-| Scenario                             | Use                                  | Example            |
-| ------------------------------------ | ------------------------------------ | ------------------ |
-| Text fades in at start of scene      | Animation (`fadeIn`, group `"in"`)   | Title appearing    |
-| Text fades out at end of scene       | Animation (`fadeOut`, group `"out"`) | Title disappearing |
-| Element pulses continuously          | Animation (`pulse`, group `"loop"`)  | Breathing button   |
-| Scene A smoothly blends into Scene B | Transition (`crossfade`)             | Video clip change  |
-| Scene slides to next scene           | Transition (`slideLeft`)             | Slide deck effect  |
-
-## References
-
-Read the linked file when building that part of canvasState:
-
-| Part                                              | Reference                                     | When to read                           |
-| ------------------------------------------------- | --------------------------------------------- | -------------------------------------- |
-| Top-level fields, canvas sizes, outputFormat      | [canvas-state.md](references/canvas-state.md) | Always                                 |
-| Elements + Tracks (types, structure, layer order) | [elements.md](references/elements.md)         | Always                                 |
-| Animations (fadeIn, slideIn, breathe, etc.)       | [animations.md](references/animations.md)     | When adding entrance/exit/loop effects |
-| Transitions (crossfade, wipe, dissolve)           | [transitions.md](references/transitions.md)   | When blending between adjacent clips   |
-| Captions & globalCaptionStyle template            | [captions.md](references/captions.md)         | When adding subtitles or karaoke       |
-| Keyframe tracks                                   | [keyframes.md](references/keyframes.md)       | When animating properties over time    |
-
-## Minimal Example
-
-```json
-{
-  "canvasState": {
-    "width": 1920,
-    "height": 1080,
-    "backgroundColor": "#1a1a2e",
-    "maxTime": 5000,
-    "elements": [
-      {
-        "id": "el_title",
-        "type": "text",
-        "name": "Title",
-        "timeFrame": { "start": 0, "end": 5000 },
-        "placement": {
-          "x": 260,
-          "y": 400,
-          "width": 1400,
-          "height": 200,
-          "rotation": 0,
-          "scaleX": 1,
-          "scaleY": 1
-        },
-        "properties": {
-          "text": "Hello World",
-          "fontFamily": "Arial",
-          "fontSize": 96,
-          "fontWeight": 700,
-          "fontColor": "#ffffff",
-          "textAlign": "center"
-        }
-      }
-    ],
-    "tracks": [
-      {
-        "id": "t_text",
-        "name": "Text",
-        "type": "text",
-        "elementIds": ["el_title"],
-        "isVisible": true
-      }
-    ],
-    "animations": [
-      {
-        "id": "a_1",
-        "targetId": "el_title",
-        "type": "fadeIn",
-        "duration": 800,
-        "group": "in",
-        "easing": "easeOut",
-        "properties": {}
-      }
-    ],
-    "captions": [],
-    "globalCaptionStyle": {
-      "fontSize": 36,
-      "fontFamily": "Arial",
-      "fontColor": "#ffffff",
-      "fontWeight": 700,
-      "textAlign": "center",
-      "lineHeight": 1.2,
-      "charSpacing": 0,
-      "styles": [],
-      "strokeWidth": 0,
-      "strokeColor": "#000000",
-      "shadowColor": "",
-      "shadowBlur": 0,
-      "shadowOffsetX": 0,
-      "shadowOffsetY": 0,
-      "backgroundColor": ""
-    }
-  },
-  "outputFormat": { "fps": 30, "quality": "medium", "format": "mp4" }
-}
-```
-
-## Example Templates
-
-9 templates in `examples/` for structural reference:
-
-- `hello-world.json` — Minimal text + fade-in (start here)
-- `product-launch.json` — Features + pricing + CTA (25s)
-- `apple-style-promo.json` — Minimalist brand promo (15s)
-- `tutorial-intro.json` — Step-by-step slides (20s)
-- `instagram-story-9x16.json` — Vertical 9:16 (15s)
-- `instagram-square-1x1.json` — Square 1:1 (12s)
-- `event-announcement.json` — Conference + speakers (20s)
-- `sale-countdown.json` — E-commerce countdown (15s)
-- `cinematic-effects.json` — Vignette + grain + glow effects
+1. **`maxTime` >= largest element `end`** — too small = elements cut off
+2. **Config files go in `/tmp/`** — never write to `examples/`
+3. **Always use modern API** — `theme()` + role helpers + inline `animIn`/`animOut`/`kf` + `autoTracks()`. 
+4. **Scene structure** — prefix element IDs with `s1_`/`s2_`… per scene; use comment blocks `// ── Scene N: Title (Xs–Ys) ──`
+5. **Transitions** require adjacent elements on same track (prefer effect-based flash/glitch cuts)
+6. **Use `backgroundColor` via `bg: t.BG`** — not a full-screen background shape
+7. **`gen_canvas.mjs` path** — run from skill root: `node scripts/gen_canvas.mjs` (NOT `skill/scripts/`)
+8. **`t.fonts` is an object, not an array** — use `{ ...t.fonts, "Extra Font": { url: "...", fileType: "ttf" } }` to add fonts. Never use `[...t.fonts]` (array spread)
